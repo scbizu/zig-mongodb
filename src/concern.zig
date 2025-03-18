@@ -29,11 +29,11 @@ pub const WriteConcern = struct {
         number: i32,
         majority: void,
 
-        fn majority() @This() {
+        fn Majority() @This() {
             return .{ .majority = {} };
         }
 
-        fn number(n: i32) @This() {
+        fn Number(n: i32) @This() {
             return .{ .number = n };
         }
     };

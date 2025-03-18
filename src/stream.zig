@@ -18,12 +18,12 @@ pub const Stream = union(enum) {
     pub const Writer = std.io.Writer(Stream, WriteError, write);
 
     /// create a new tls encrypted network stream
-    pub fn tls(stream: std.net.Stream, c: std.crypto.tls.Client) @This() {
+    pub fn TLS(stream: std.net.Stream, c: std.crypto.tls.Client) @This() {
         return .{ .tls = .{ .plain = stream, .tls = c } };
     }
 
     /// create a new plain text network stream
-    pub fn plain(stream: std.net.Stream) @This() {
+    pub fn Plain(stream: std.net.Stream) @This() {
         return .{ .plain = stream };
     }
 

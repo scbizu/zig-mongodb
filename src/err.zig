@@ -8,7 +8,7 @@ pub const Error = struct {
         not_found = 59,
         unauthorized = 13,
         authentication_failed = 18,
-        // todo: many, many, many more
+        // TODO: many, many, many more
         client_marked_killed = 46841,
     };
     // MongoError enumify the mongo error , so we can use code as error for returning
@@ -26,8 +26,8 @@ pub const Error = struct {
     /// https://www.mongodb.com/docs/manual/reference/error-codes/
     code: i32,
     codeName: []const u8,
-
-    pub fn code(self: @This()) Code {
+    // toCode convert the internal code to enum
+    pub fn toCode(self: @This()) Code {
         return @enumFromInt(self.code);
     }
 
